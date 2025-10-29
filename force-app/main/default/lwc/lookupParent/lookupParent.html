@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Generic Reusable Lookup Demo" icon-name="utility:search">
+        <div class="slds-p-around_medium">
+
+            <!-- Object Selector -->
+            <lightning-combobox
+    name="objectSelector"
+    label="Select Object"
+    value={selectedObject}
+    options={objectOptions}
+    onchange={handleObjectChange}>
+    </lightning-combobox>
+
+            <br/>
+
+            <!-- Reusable Lookup -->
+            <c-reusable-lookup
+                object-name={selectedObject}
+                label="Search Record"
+                onrecordselect={handleRecordSelection}>
+            </c-reusable-lookup>
+
+            <!-- Selected record info -->
+            <template if:true={selectedRecord}>
+                <lightning-card title="Selected Record">
+                    <div class="slds-p-around_small">
+                        <p><b>ID:</b> {selectedRecord.Id}</p>
+                        <p><b>Name:</b> {selectedRecord.Name}</p>
+                    </div>
+                </lightning-card>
+            </template>
+        </div>
+    </lightning-card>
+</template>

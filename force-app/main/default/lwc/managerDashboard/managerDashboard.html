@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Manager Dashboard" icon-name="standard:employee">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-wrap slds-gutters">
+
+                <!-- Employee List -->
+                <div class="slds-col slds-size_1-of-3">
+                    <c-employee-list
+                        employees={employees}
+                        onemployeeselected={handleEmployeeSelected}>
+                    </c-employee-list>
+                </div>
+
+                <!-- Employee Detail -->
+                <div class="slds-col slds-size_1-of-3">
+                    <c-employee-detail
+                        employee={selectedEmployee}>
+                    </c-employee-detail>
+                </div>
+
+                <!-- Employee Performance -->
+                <div class="slds-col slds-size_1-of-3">
+                    <c-employee-performance
+                        employee={selectedEmployee}>
+                    </c-employee-performance>
+                </div>
+
+            </div>
+        </div>
+    </lightning-card>
+</template>

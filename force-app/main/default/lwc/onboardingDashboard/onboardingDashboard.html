@@ -1,0 +1,42 @@
+<template>
+  <lightning-card title="Onboarding Dashboard" icon-name="standard:dashboard">
+    <div class="dashboard-container slds-var-p-around_medium">
+
+      <!-- ======================= -->
+      <!-- Progress Chart Section -->
+      <!-- ======================= -->
+      <template if:true={employees}>
+        <div class="slds-box slds-theme_default shadow-card slds-var-m-bottom_medium">
+          <div class="section-header">
+            <lightning-icon icon-name="utility:chart" size="small" class="section-icon"></lightning-icon>
+            <h2 class="slds-text-heading_small">Employee Onboarding Progress</h2>
+          </div>
+          <c-onboarding-progress-chart data={chartData}></c-onboarding-progress-chart>
+        </div>
+      </template>
+
+      <!-- ======================= -->
+      <!-- Task List Section -->
+      <!-- ======================= -->
+      <template if:true={tasks}>
+        <div class="slds-box slds-theme_default shadow-card">
+          <div class="section-header">
+            <lightning-icon icon-name="standard:task" size="small" class="section-icon"></lightning-icon>
+            <h2 class="slds-text-heading_small">Pending & In-Progress Tasks</h2>
+          </div>
+          <c-task-list tasks={tasks} onmarkcomplete={handleMarkComplete}></c-task-list>
+        </div>
+      </template>
+
+      <!-- ======================= -->
+      <!-- Error Message Section -->
+      <!-- ======================= -->
+      <template if:true={error}>
+        <div class="slds-text-color_error slds-var-m-top_medium slds-text-body_regular">
+          ⚠️ <strong>Error:</strong> {error}
+        </div>
+      </template>
+
+    </div>
+  </lightning-card>
+</template>

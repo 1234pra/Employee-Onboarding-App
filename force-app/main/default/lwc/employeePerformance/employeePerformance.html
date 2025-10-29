@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Employee Performance" icon-name="standard:dashboard">
+        <template if:true={employee}>
+            <div class="slds-p-around_small">
+                <p><b>Employee:</b> {employee.Name}</p>
+                <p><b>Performance Score:</b> {performanceScore}</p>
+                <p><b>Projects Completed:</b> {projectsCompleted}</p>
+                <p><b>Attendance %:</b> {attendance}</p>
+            </div>
+        </template>
+        <template if:false={employee}>
+            <p class="slds-p-around_small">Select an employee to view performance.</p>
+        </template>
+    </lightning-card>
+</template>

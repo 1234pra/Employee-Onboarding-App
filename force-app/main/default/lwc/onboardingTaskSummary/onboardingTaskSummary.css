@@ -1,0 +1,97 @@
+.summary-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+/* Individual Cards */
+.summary-card {
+  flex: 1;
+  min-width: 160px;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.summary-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient Backgrounds */
+.summary-card.total {
+  background: linear-gradient(135deg, #0176d3, #00a1e0);
+}
+.summary-card.completed {
+  background: linear-gradient(135deg, #2e844a, #37b24d);
+}
+.summary-card.pending {
+  background: linear-gradient(135deg, #ba0517, #e82e2e);
+}
+
+/* Text Styles */
+.summary-label {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+.summary-value {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+  animation: pulse 1s ease-in-out;
+}
+
+.summary-icon {
+  --slds-c-icon-color-foreground: white;
+}
+
+/* Subtle Animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+/* Live Status Footer */
+.footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b6b6b;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.dot.live {
+  background-color: #28b463;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .summary-container {
+    flex-direction: column;
+  }
+}

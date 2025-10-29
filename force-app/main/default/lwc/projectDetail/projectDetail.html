@@ -1,0 +1,15 @@
+<template>
+    <div class="detail">
+        <h3>Project Detail</h3>
+        <template if:true={project}>
+            <p><strong>{project.name}</strong></p>
+            <p>Status: {project.status}</p>
+            <p>Owner: {project.owner}</p>
+            <p>Description: {project.description}</p>
+            <button onclick={markComplete} disabled={isComplete}>Mark Complete</button>
+        </template>
+        <template if:false={project}>
+            <p>Select a project from the list</p>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,42 @@
+<template>
+    <div class="lookup-container">
+        <label>{label}</label>
+
+        <template if:true={selectedRecord}>
+            <div class="pill">
+                <span>{selectedRecord.Name}</span>
+                <lightning-button-icon icon-name="utility:close" size="x-small" alternative-text="Clear" onclick={handleClear}></lightning-button-icon>
+            </div>
+        </template>
+
+        <template if:false={selectedRecord}>
+            <lightning-input
+                type="text"
+                placeholder="Search..."
+                value={searchTerm}
+                onchange={handleInputChange}>
+            </lightning-input>
+
+            <template if:true={showDropdown}>
+                <ul class="dropdown">
+                    <template for:each={records} for:item="rec">
+                        <li key={rec.Id} data-id={rec.Id} onclick={handleSelect}>
+                            {rec.Name}
+                        </li>
+                    </template>
+                </ul>
+            </template>
+
+            <template if:true={isLoading}>
+                <lightning-spinner size="small"></lightning-spinner>
+            </template>
+        </template>
+
+        <!-- Details -->
+        <template if:true={recordDetails}>
+            <lightning-card title="Record Details">
+                <pre>{recordDetails}</pre>
+            </lightning-card>
+        </template>
+    </div>
+</template>

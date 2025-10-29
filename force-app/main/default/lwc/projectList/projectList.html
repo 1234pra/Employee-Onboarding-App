@@ -1,0 +1,10 @@
+<template>
+    <div class="list">
+        <h3>Projects</h3>
+        <template for:each={projects} for:item="p">
+            <div key={p.id} class="project-row" onclick={selectProject} data-id={p.id}>
+                <strong>{p.name}</strong> — {p.status}
+            </div>
+        </template>
+    </div>
+</template>

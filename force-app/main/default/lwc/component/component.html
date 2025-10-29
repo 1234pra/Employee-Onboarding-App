@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Component">
+        <div class="slds-p-around_medium">
+            <p><strong>Message:</strong> {Message}</p>
+            <p><strong>Received Counter from Child:</strong> {childCounter}</p>
+
+            <!-- Pass data to child and listen for event -->
+            <c-child-component
+                message={Message}
+                oncounterchange={handleCounterChange}>
+            </c-child-component>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Student Performance Analyzer" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="Recalculate Performance" onclick={handleRecalculate}></lightning-button>
+        </div>
+
+        <div class="slds-var-m-around_medium">
+            <canvas class="chart" lwc:dom="manual"></canvas>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Project Dashboard" icon-name="standard:work_order">
+        <div class="slds-p-around_medium dashboard-container">
+            <div class="dashboard-header">
+                <h1 class="title">Project Dashboard</h1>
+                <div class="actions">
+                    <lightning-button label="Add Dummy Project" onclick={addDummyProject} variant="brand"></lightning-button>
+                </div>
+            </div>
+
+            <div class="grid">
+                <section class="col left-col">
+                    <lightning-card icon-name="standard:campaign" title="Projects List" class="inner-card">
+                        <div class="card-body slds-p-around_small">
+                            <c-project-list projects={projects} onprojectselected={handleProjectSelected}></c-project-list>
+                        </div>
+                    </lightning-card>
+                </section>
+
+                <section class="col right-col">
+                    <lightning-card icon-name="standard:case" title="Project Detail" class="inner-card">
+                        <div class="card-body slds-p-around_small">
+                            <c-project-detail project={selectedProject} onmarkcomplete={handleMarkComplete}></c-project-detail>
+                        </div>
+                    </lightning-card>
+
+                    <lightning-card icon-name="standard:summary" title="Stats" class="inner-card stats-card">
+                        <div class="card-body slds-p-around_small">
+                            <c-project-stats total={stats.total} completed={stats.completed} in-progress={stats.inProgress}></c-project-stats>
+                        </div>
+                    </lightning-card>
+                </section>
+            </div>
+        </div>
+    </lightning-card>
+</template>

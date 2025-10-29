@@ -1,0 +1,27 @@
+<template>
+  <lightning-card title="📊 Live Task Summary" icon-name="standard:task">
+    <div class="summary-container">
+      <div class="summary-card total">
+        <lightning-icon icon-name="utility:tasks" size="small" class="summary-icon"></lightning-icon>
+        <div class="summary-label">Total Tasks</div>
+        <div class="summary-value animate-number">{total}</div>
+      </div>
+
+      <div class="summary-card completed">
+        <lightning-icon icon-name="utility:check" size="small" class="summary-icon"></lightning-icon>
+        <div class="summary-label">Completed</div>
+        <div class="summary-value animate-number">{completed}</div>
+      </div>
+
+      <div class="summary-card pending">
+        <lightning-icon icon-name="utility:pause" size="small" class="summary-icon"></lightning-icon>
+        <div class="summary-label">Pending</div>
+        <div class="summary-value animate-number">{pending}</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="dot live"></span> Live updates via Platform Event
+    </div>
+  </lightning-card>
+</template>

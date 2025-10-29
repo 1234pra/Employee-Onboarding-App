@@ -1,0 +1,37 @@
+<template>
+  <lightning-card title="Pending Tasks" icon-name="standard:task">
+    <template if:true={safeTasks}>
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+          <tr class="slds-text-title_caps">
+            <th>Name</th>
+            <th>Assigned To</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={safeTasks} for:item="t">
+            <tr key={t.Id}>
+              <td>{t.Name}</td>
+              <td>{t.AssignedName}</td>
+              <td>{t.Status__c}</td>
+              <td>
+                <lightning-button 
+                  variant="brand-outline"
+                  label="Mark Complete"
+                  data-id={t.Id}
+                  onclick={handleMarkComplete}>
+                </lightning-button>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </template>
+
+    <template if:false={safeTasks}>
+      <p class="slds-p-around_medium">No pending tasks 🎉</p>
+    </template>
+  </lightning-card>
+</template>

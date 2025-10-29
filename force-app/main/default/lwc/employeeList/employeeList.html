@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Employee List" icon-name="standard:employee">
+        <template if:true={employees}>
+            <ul class="slds-list_dotted">
+                <template for:each={employees} for:item="emp">
+                    <li key={emp.Id} class="slds-p-vertical_small">
+                        <lightning-button 
+                            variant="base"
+                            label={emp.Name}
+                            data-id={emp.Id}
+                            onclick={handleSelect}>
+                        </lightning-button>
+                    </li>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Weather Checker" icon-name="utility:forecast">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Enter ZIP Code"
+                value={zipCode}
+                onchange={handleZipChange}
+                placeholder="e.g. 411001">
+            </lightning-input>
+
+            <lightning-button
+                label="Get Weather"
+                variant="brand"
+                class="slds-m-top_small"
+                onclick={handleGetWeather}>
+            </lightning-button>
+
+            <template if:true={weather}>
+                <div class="slds-m-top_medium">
+                    <p><b>City:</b> {weather.city}</p>
+                    <p><b>Temperature:</b> {weather.temperature} °C</p>
+                    <p><b>Condition:</b> {weather.description}</p>
+                    <p><b>Alert:</b> {weather.alert}</p>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-text-color_error slds-m-top_medium">{error}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

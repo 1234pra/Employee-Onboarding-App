@@ -1,0 +1,17 @@
+<template>
+  <lightning-card title="Employee Onboarding Progress" icon-name="custom:custom63">
+    <template if:true={data}>
+      <div class="slds-grid slds-wrap slds-var-m-around_medium">
+        <template for:each={data} for:item="emp">
+          <div key={emp.name} class="slds-col slds-size_1-of-3 slds-var-p-around_small">
+            <div class="slds-box slds-theme_shade slds-text-align_center">
+              <p class="slds-text-heading_small">{emp.name}</p>
+              <p>Status: {emp.status}</p>
+              <p>Background Check: {emp.bgCheck}</p>
+            </div>
+          </div>
+        </template>
+      </div>
+    </template>
+  </lightning-card>
+</template>

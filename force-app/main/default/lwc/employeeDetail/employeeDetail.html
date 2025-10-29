@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Employee Details" icon-name="standard:contact">
+        <template if:true={employee}>
+            <div class="slds-p-around_small">
+                <p><b>Name:</b> {employee.Name}</p>
+                <p><b>Department:</b> {employee.Department}</p>
+                <p><b>Role:</b> {employee.Role}</p>
+            </div>
+        </template>
+        <template if:false={employee}>
+            <p class="slds-p-around_small">Select an employee to view details.</p>
+        </template>
+    </lightning-card>
+</template>
