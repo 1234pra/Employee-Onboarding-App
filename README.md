@@ -56,9 +56,9 @@ Main dashboard displaying:
 - Task completion summaries  
 
 🖼️ 
-   ![Dashboard Screenshot](assets/dashboard.png) 
-   ![pending tasks Screenshot](assets/pending tasks.png)
-   ![live summary Screenshot](assets/live summary.png)
+   ![Dashboard Screenshot](ass/ass/assets/dashboard.png) 
+   ![pending tasks Screenshot](ass/ass/assets/pending%20tasks.png)
+   ![live summary Screenshot](ass/ass/assets/live%20summary.png)
 
 ---
 
