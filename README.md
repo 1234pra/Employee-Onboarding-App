@@ -82,7 +82,7 @@ sfdx force:apex:test:run -u <OrgAlias> --wait 10 --codecoverage
 | Data | Custom Objects | Employee__c, Onboarding_Task__c |
 | Automation | Flow | Auto-create tasks |
 | Logic | Apex Classes | Business logic & background checks |
-| UI | Lightning Web Components | Dashboard + AI Copilot |
+| UI | Lightning Web Components | Dashboard + live summary tracker |
 | Integration | Named Credential + HTTP Callout | Mock background check API |
 | Static Assets | Static Resource | AI avatar |
 
